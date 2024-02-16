@@ -44,7 +44,6 @@ pipeline {
             }
             steps {
                 input 'Does the staging environment look OK?'
-                milestone(1)
                 withCredentials([usernamePassword(credentialsId: 'deploy', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
                     sshPublisher(
                         failOnError: true,
